@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Cucumber HTML Reports</td>
+        <td>1</td>
+      <td>18 Apr 2022, 12:12</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.APIStepDefs.connectToAPIAndVerifyAllNeededVerificationsInOneLine()</td>
+              <td>1</td>
+              <td class="duration" data-value="1514439000">1.514</td>
+              <td class="duration" data-value="1514439000">1.514</td>
+              <td class="duration" data-value="1514439000">1.514</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.APIStepDefs.connect_to_API()</td>
+              <td>1</td>
+              <td class="duration" data-value="4128244000">4.128</td>
+              <td class="duration" data-value="4128244000">4.128</td>
+              <td class="duration" data-value="4128244000">4.128</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.APIStepDefs.verfy_that_Header_has(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="371000">0.000</td>
+              <td class="duration" data-value="371000">0.000</td>
+              <td class="duration" data-value="371000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.APIStepDefs.verifyThatHeaderIs(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1481000">0.001</td>
+              <td class="duration" data-value="1481000">0.001</td>
+              <td class="duration" data-value="1481000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.APIStepDefs.verify_content_type_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1057000">0.001</td>
+              <td class="duration" data-value="1057000">0.001</td>
+              <td class="duration" data-value="1057000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.APIStepDefs.verify_that_body_has_pizza_option(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1987000">0.001</td>
+              <td class="duration" data-value="1987000">0.001</td>
+              <td class="duration" data-value="1987000">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.APIStepDefs.verify_the_status_code_is(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="8619000">0.008</td>
+              <td class="duration" data-value="8619000">0.008</td>
+              <td class="duration" data-value="8619000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.AddToShoppingCartStepDefs.clickAllEkstraOptionsAndSelectAllOption()</td>
+              <td>2</td>
+              <td class="duration" data-value="23298232000">23.298</td>
+              <td class="duration" data-value="23298232000">24.563</td>
+              <td class="duration" data-value="46596464000">46.596</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.AddToShoppingCartStepDefs.clickAllEkstraOptionsAndSelectOneOption()</td>
+              <td>4</td>
+              <td class="duration" data-value="2055955000">2.055</td>
+              <td class="duration" data-value="2055955000">2.187</td>
+              <td class="duration" data-value="8223820000">8.223</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.AddToShoppingCartStepDefs.clickOnOption(java.lang.String)</td>
+              <td>14</td>
+              <td class="duration" data-value="2983254928">2.983</td>
+              <td class="duration" data-value="2983254928">3.172</td>
+              <td class="duration" data-value="41765569000">41.765</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.AddToShoppingCartStepDefs.click_on_Confirm_button()</td>
+              <td>16</td>
+              <td class="duration" data-value="629735000">0.629</td>
+              <td class="duration" data-value="629735000">1.199</td>
+              <td class="duration" data-value="10075760000">10.075</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.AddToShoppingCartStepDefs.verifyThatIsAddedShoppingCartWithExtras(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="190290250">0.190</td>
+              <td class="duration" data-value="190290250">0.273</td>
+              <td class="duration" data-value="761161000">0.761</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.AddToShoppingCartStepDefs.verifyThatIsAddedShoppingCartWithoutExtras(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="207835333">0.207</td>
+              <td class="duration" data-value="207835333">0.254</td>
+              <td class="duration" data-value="623506000">0.623</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.Decrease_IncreaseStepDefs.clickOnMinusButtonOfInShoppingList(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="794409500">0.794</td>
+              <td class="duration" data-value="794409500">0.844</td>
+              <td class="duration" data-value="1588819000">1.588</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.Decrease_IncreaseStepDefs.clickOnOptionAgain(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="822154000">0.822</td>
+              <td class="duration" data-value="822154000">0.822</td>
+              <td class="duration" data-value="822154000">0.822</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.Decrease_IncreaseStepDefs.clickOnPlusButtonOfInShoppingList(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="2018462500">2.018</td>
+              <td class="duration" data-value="2018462500">2.028</td>
+              <td class="duration" data-value="4036925000">4.036</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.Decrease_IncreaseStepDefs.verifyThatIsDecreased(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="2086969000">2.086</td>
+              <td class="duration" data-value="2086969000">2.091</td>
+              <td class="duration" data-value="4173938000">4.173</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.Decrease_IncreaseStepDefs.verifyThatIsIncreased(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2778000">0.002</td>
+              <td class="duration" data-value="2778000">0.002</td>
+              <td class="duration" data-value="2778000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.DiscountStepDefs.verify_that_discount_is_applied(int)</td>
+              <td>2</td>
+              <td class="duration" data-value="213086000">0.213</td>
+              <td class="duration" data-value="213086000">0.225</td>
+              <td class="duration" data-value="426172000">0.426</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.DiscountStepDefs.verify_that_option_is_selected(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="214816500">0.214</td>
+              <td class="duration" data-value="214816500">0.225</td>
+              <td class="duration" data-value="429633000">0.429</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.Hooks.setUp()</td>
+              <td>20</td>
+              <td class="duration" data-value="7215916100">7.215</td>
+              <td class="duration" data-value="7215916100">10.940</td>
+              <td class="duration" data-value="144318322000">2:24.318</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.Hooks.tearDown(io.cucumber.java.Scenario)</td>
+              <td>20</td>
+              <td class="duration" data-value="118092550">0.118</td>
+              <td class="duration" data-value="118092550">0.125</td>
+              <td class="duration" data-value="2361851000">2.361</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.NavigateToBranchesStepDefs.choose_Branch(java.lang.String)</td>
+              <td>18</td>
+              <td class="duration" data-value="2332973611">2.332</td>
+              <td class="duration" data-value="2332973611">3.221</td>
+              <td class="duration" data-value="41993525000">41.993</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.NavigateToBranchesStepDefs.navigate_to_opening_page()</td>
+              <td>18</td>
+              <td class="duration" data-value="4502324777">4.502</td>
+              <td class="duration" data-value="4502324777">5.122</td>
+              <td class="duration" data-value="81041846000">1:21.041</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.NavigateToBranchesStepDefs.selectBranchFromAboveTheLeftSideOfPage(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="5843602500">5.843</td>
+              <td class="duration" data-value="5843602500">6.254</td>
+              <td class="duration" data-value="11687205000">11.687</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.NavigateToBranchesStepDefs.verify_the_Branch_is_opened(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="1127528000">1.127</td>
+              <td class="duration" data-value="1127528000">2.569</td>
+              <td class="duration" data-value="4510112000">4.510</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.OrderStepDefs.click_on_Checkout_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="305029000">0.305</td>
+              <td class="duration" data-value="305029000">0.305</td>
+              <td class="duration" data-value="305029000">0.305</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.OrderStepDefs.click_on_Order_now_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="2624007000">2.624</td>
+              <td class="duration" data-value="2624007000">2.624</td>
+              <td class="duration" data-value="2624007000">2.624</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.OrderStepDefs.fill_in_the_blanks_with_valid_credentials()</td>
+              <td>1</td>
+              <td class="duration" data-value="1297597000">1.297</td>
+              <td class="duration" data-value="1297597000">1.297</td>
+              <td class="duration" data-value="1297597000">1.297</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.OrderStepDefs.select_Cash_option()</td>
+              <td>1</td>
+              <td class="duration" data-value="256308000">0.256</td>
+              <td class="duration" data-value="256308000">0.256</td>
+              <td class="duration" data-value="256308000">0.256</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.OrderStepDefs.select_Place_my_order_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="5131635000">5.131</td>
+              <td class="duration" data-value="5131635000">5.131</td>
+              <td class="duration" data-value="5131635000">5.131</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.OrderStepDefs.verify_the_mail_address_is_the_same_user_wrote_before_in_description()</td>
+              <td>1</td>
+              <td class="duration" data-value="23919000">0.023</td>
+              <td class="duration" data-value="23919000">0.023</td>
+              <td class="duration" data-value="23919000">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.OrderStepDefs.verify_title_message(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="49904000">0.049</td>
+              <td class="duration" data-value="49904000">0.049</td>
+              <td class="duration" data-value="49904000">0.049</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.appSmart.tests.stepDefinitions.deleteProductStepDefs.verify_that_message_is_displayed(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="89877000">0.089</td>
+              <td class="duration" data-value="89877000">0.089</td>
+              <td class="duration" data-value="89877000">0.089</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>34</td>
+            <td>152</td>
+            <td class="duration">2.768</td>
+            <td class="duration">2:24.318</td>
+            <td class="duration">7:0.874</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

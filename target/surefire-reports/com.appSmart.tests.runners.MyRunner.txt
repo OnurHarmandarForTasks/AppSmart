@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.appSmart.tests.runners.MyRunner
+-------------------------------------------------------------------------------
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 422.276 s - in com.appSmart.tests.runners.MyRunner
