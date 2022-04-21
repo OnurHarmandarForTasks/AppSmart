@@ -5,7 +5,7 @@ Feature: Menu Options
     Given Navigate to opening page
     When Choose "Bremen" Branch
 
-
+@wip
   Scenario Outline:User can add <Option>
   Then Click on "<Option>" option
   And  Click on Confirm button
@@ -13,8 +13,8 @@ Feature: Menu Options
   Examples:
     |Option  |
   |Grundpizza Margherita|
-  |Pizza Salami         |
-  |Pizza Funghi         |
+ # |Pizza Salami         |
+ # |Pizza Funghi         |
 
 
 Scenario Outline: User can add <Option> by choosing one option from all ekstra options
