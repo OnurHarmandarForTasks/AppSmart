@@ -6,7 +6,7 @@ Feature: Order the product
     When Choose "Bremen" Branch
     And Click on "Grundpizza Margherita" option
     And  Click on Confirm button
-  @wip
+
     Scenario: User can Order by clicking Order now button with filling blanks with valid credentials and cash
       When Click on Order now button
       And Fill in the blanks with valid credentials

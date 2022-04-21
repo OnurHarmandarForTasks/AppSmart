@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +22,20 @@ public class AddToShoppingCartStepDefs {
 
     @Then("Click on {string} option")
     public void clickOnOption(String option) {
-        //Driver.get().findElement(By.cssSelector("div[class='button-standard']")).click();
-        menuOptions.menu(option).click();
+        //Shop is not working for pickup option between 23:59/12:00
+        //So we have to skip worning alert
+        //I used time class to compare time is between 00/12 or not
+        String time= String.valueOf(LocalTime.now());
+        String[] timeArray=time.split(":");
+        int hour=Integer.parseInt(timeArray[0]);
+        if(hour>=0&&hour<12){
+            Driver.get().findElement(By.cssSelector("div[class='button-standard']")).click();
+            menuOptions.menu(option).click();
+        }else{
+            menuOptions.menu(option).click();
+        }
+
+
     }
 
     @Then("Click on Confirm button")

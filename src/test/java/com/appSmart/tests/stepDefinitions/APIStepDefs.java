@@ -16,7 +16,7 @@ import static io.restassured.RestAssured.given;
 public class APIStepDefs {
 
     public Response response;
-    //I found url from devtoll/network
+    //I found url from devtool/network
     String url="https://dev.delivery-app.app-smart.services/api3/1/products/1954";
 
 
