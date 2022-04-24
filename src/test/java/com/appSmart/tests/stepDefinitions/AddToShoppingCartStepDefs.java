@@ -24,8 +24,9 @@ public class AddToShoppingCartStepDefs {
     public void clickOnOption(String option) {
         //Shop is not working for pickup option between 23:59/12:00
         //So we have to skip worning alert
-        //I used time class to compare time is between 00/12 or not
-        String time= String.valueOf(LocalTime.now());
+        //Firs way: I used time class to compare time is between 00/12 or not
+
+       /* String time= String.valueOf(LocalTime.now());
         String[] timeArray=time.split(":");
         int hour=Integer.parseInt(timeArray[0]);
         if(hour>=0&&hour<12){
@@ -34,7 +35,15 @@ public class AddToShoppingCartStepDefs {
         }else{
             menuOptions.menu(option).click();
         }
-
+        */
+        //Second way with try/cathch block
+        try{
+            Driver.get().findElement(By.cssSelector("div[class='button-standard']")).click();
+        }catch (Exception e){
+            System.out.println("Shop is Open");
+        }finally {
+            menuOptions.menu(option).click();
+        }
 
     }
 
