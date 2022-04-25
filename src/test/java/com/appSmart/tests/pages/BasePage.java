@@ -16,4 +16,7 @@ public abstract class BasePage {
     @FindBy(css = "div[class='Branch_Branch__3CW3J']")
     public WebElement switchBranch;
 
+    @FindBy(css = "div[class='button-standard']")
+    public WebElement closePopUp;
+
 }

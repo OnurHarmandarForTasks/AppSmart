@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import java.time.LocalTime;
@@ -25,22 +26,23 @@ public class AddToShoppingCartStepDefs {
         //Shop is not working for pickup option between 23:59/12:00
         //So we have to skip worning alert
         //Firs way: I used time class to compare time is between 00/12 or not
-
-       /* String time= String.valueOf(LocalTime.now());
+        /*
+        String time= String.valueOf(LocalTime.now());
         String[] timeArray=time.split(":");
         int hour=Integer.parseInt(timeArray[0]);
         if(hour>=0&&hour<12){
-            Driver.get().findElement(By.cssSelector("div[class='button-standard']")).click();
+            menuOptions.closePopUp.click();
             menuOptions.menu(option).click();
         }else{
             menuOptions.menu(option).click();
         }
-        */
+         */
         //Second way with try/cathch block
         try{
-            Driver.get().findElement(By.cssSelector("div[class='button-standard']")).click();
-        }catch (Exception e){
-            System.out.println("Shop is Open");
+            menuOptions.closePopUp.click();
+        }catch (NoSuchElementException e){
+            System.out.println(e.getStackTrace());
+            System.out.println("PickUp Option is Open");
         }finally {
             menuOptions.menu(option).click();
         }
